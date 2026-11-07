@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHorizon | Discover & Register for Amazing Events</title>
+    <meta name="description" content="Discover, explore, and register for the best technology, music, sports, and cultural events.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-dark dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-white/80 dark:bg-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        <i class="fa-solid fa-calendar-star mr-2 text-primary"></i>EventHorizon
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="#events" class="hover:text-primary transition-colors font-medium">Events</a>
+                    <a href="#about" class="hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#contact" class="hover:text-primary transition-colors font-medium">Contact</a>
+                    
+                    <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon dark:hidden text-gray-700"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Open Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+                <a href="#events" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Events</a>
+                <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+                <button id="mobileThemeToggle" class="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    <span>Toggle Theme</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 opacity-90 dark:opacity-80"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center mix-blend-overlay"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up">
+                Discover Events That <span class="text-yellow-300">Inspire</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto animate-fade-in-up delay-100">
+                Join thousands of enthusiasts at curated technology, music, sports, and cultural events worldwide. Your next unforgettable experience starts here.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-200">
+                <a href="#events" class="px-8 py-4 bg-white text-primary font-bold rounded-full shadow-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300">
+                    Explore Events
+                </a>
+                <a href="#about" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 hover:scale-105 transition-all duration-300">
+                    Learn More
+                </a>
+            </div>
+            
+            <div class="mt-16 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 inline-block animate-fade-in-up delay-300">
+                <p class="text-sm uppercase tracking-wider mb-2 text-gray-200">Next Featured Event Starts In</p>
+                <div id="countdown" class="text-2xl md:text-4xl font-mono font-bold text-yellow-300">
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-gray-50 dark:bg-dark transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Upcoming Events</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Browse, search, and filter through our handpicked selection of premium events.</p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md mb-10 transition-colors duration-300">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div class="md:col-span-5 relative">
+                        <i class="fa-solid fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="searchInput" placeholder="Search events by name..." 
+                            class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+                    </div>
+                    
+                    <div class="md:col-span-4">
+                        <select id="categoryFilter" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none cursor-pointer transition-all">
+                            <option value="All">All Categories</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Workshops">Workshops</option>
+                            <option value="Music and Entertainment">Music and Entertainment</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Cultural Events">Cultural Events</option>
+                            <option value="Business and Networking">Business and Networking</option>
+                        </select>
+                    </div>
+                    
+                    <div class="md:col-span-3">
+                        <select id="sortFilter" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none cursor-pointer transition-all">
+                            <option value="date-asc">Date: Earliest First</option>
+                            <option value="date-desc">Date: Latest First</option>
+                            <option value="popularity">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 mt-4 justify-center md:justify-start" id="categoryPills"></div>
+            </div>
+
+            <div id="eventsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            
+            <div id="emptyState" class="hidden col-span-full text-center py-16">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 dark:bg-slate-800 mb-4">
+                    <i class="fa-solid fa-calendar-xmark text-3xl text-gray-400"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No events found</h3>
+                <p class="text-gray-500 dark:text-gray-400">Try adjusting your search or filter criteria to find what you're looking for.</p>
+                <button onclick="resetFilters()" class="mt-4 text-primary font-medium hover:underline">Clear all filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-20 blur-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="About EventHorizon" class="relative rounded-2xl shadow-2xl w-full object-cover h-96">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Choose EventHorizon?</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-lg">
+                        We are dedicated to connecting people with extraordinary experiences. Our platform curates the best events across multiple domains, ensuring seamless discovery and hassle-free registration.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Handpicked, high-quality events from verified organizers.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Secure, instant registration with duplicate prevention.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-primary mt-1 mr-3 text-xl"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Personalized recommendations based on your interests.</span>
+                        </li>
+                    </ul>
+                    <a href="#events" class="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-xl shadow-lg hover:bg-indigo-600 hover:shadow-xl transition-all duration-300">
+                        Browse Events Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="text-2xl font-bold text-white mb-4 block">
+                        <i class="fa-solid fa-calendar-star mr-2 text-primary"></i>EventHorizon
+                    </a>
+                    <p class="text-gray-400 max-w-sm">Your premier destination for discovering and registering to the world's most exciting events.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#events" class="hover:text-primary transition-colors">Events</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                &copy; 2026 EventHorizon. All rights reserved. Built with precision and care.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Event Details Modal -->
+    <div id="eventModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-75 backdrop-blur-sm" onclick="closeModal('eventModal')"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white dark:bg-slate-800 rounded-2xl shadow-2xl sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full border border-gray-200 dark:border-gray-700">
+                <div class="relative">
+                    <img id="modalImage" src="" alt="Event Banner" class="w-full h-64 object-cover">
+                    <button onclick="closeModal('eventModal')" class="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                    <span id="modalCategory" class="absolute bottom-4 left-4 px-3 py-1 bg-primary text-white text-xs font-bold uppercase tracking-wider rounded-full"></span>
+                </div>
+                <div class="p-6 sm:p-8">
+                    <h3 id="modalTitle" class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4"></h3>
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mb-6">
+                        <span class="flex items-center"><i class="fa-regular fa-calendar mr-2 text-primary"></i> <span id="modalDate"></span></span>
+                        <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2 text-primary"></i> <span id="modalVenue"></span></span>
+                        <span class="flex items-center"><i class="fa-solid fa-fire mr-2 text-secondary"></i> Popularity: <span id="modalPopularity" class="ml-1"></span></span>
+                    </div>
+                    <p id="modalDescription" class="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed"></p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button id="openRegisterBtn" class="flex-1 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-indigo-600 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-ticket"></i> Register Now
+                        </button>
+                        <button onclick="closeModal('eventModal')" class="flex-1 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-slate-700 transition-all duration-300">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="register-modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-75 backdrop-blur-sm" onclick="closeModal('registerModal')"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white dark:bg-slate-800 rounded-2xl shadow-2xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-gray-200 dark:border-gray-700">
+                <div class="p-6 sm:p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Event Registration</h3>
+                        <button onclick="closeModal('registerModal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                            <i class="fa-solid fa-times text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <form id="registrationForm" class="space-y-5" novalidate>
+                        <input type="hidden" id="regEventId">
+                        
+                        <div>
+                            <label for="regName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name *</label>
+                            <input type="text" id="regName" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="John Doe">
+                            <p id="nameError" class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+                        
+                        <div>
+                            <label for="regEmail" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address *</label>
+                            <input type="email" id="regEmail" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="john@example.com">
+                            <p id="emailError" class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+                        
+                        <div>
+                            <label for="regPhone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone Number *</label>
+                            <input type="tel" id="regPhone" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="+1 234 567 8900">
+                            <p id="phoneError" class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+                        
+                        <div>
+                            <label for="regEvent" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Selected Event *</label>
+                            <select id="regEvent" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all cursor-pointer">
+                                <option value="">Select an event...</option>
+                            </select>
+                            <p id="eventError" class="error-msg text-red-500 text-xs mt-1 hidden"></p>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-indigo-600 hover:shadow-xl transition-all duration-300 mt-4">
+                            Confirm Registration
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3"></div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-indigo-600 hover:scale-110 z-40" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

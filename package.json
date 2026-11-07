@@ -1,0 +1,23 @@
+{
+  "name": "eventhorizon",
+  "version": "1.0.0",
+  "description": "A modern, fully responsive Event Management Website built with HTML, Tailwind CSS, and Vanilla JavaScript.",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Static site - no build step required. Open index.html in a browser.'",
+    "build": "echo 'Static site - no build step required.'",
+    "dev": "echo 'Use VS Code Live Server extension for local development.'"
+  },
+  "keywords": [
+    "event-management",
+    "html5",
+    "tailwindcss",
+    "vanilla-javascript",
+    "responsive",
+    "static-site"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
